@@ -1,0 +1,1 @@
+select distinct table_catalog from information_schema.tables
