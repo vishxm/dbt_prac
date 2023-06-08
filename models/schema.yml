@@ -11,7 +11,7 @@ models:
           - not_null
 
       - name: host_id
-        description: The hosts' id. References the host table.
+        description: The hosts's id. References the host table.
         tests:
           - not_null
           - relationships:
