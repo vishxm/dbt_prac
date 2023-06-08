@@ -28,21 +28,26 @@ models:
                      'Hotel room']
 
       - name: minimum_nights
+        description: '{{ doc("dim_listings_cleansed_minimum_nights") }}'
         tests:
           - positive_value
 
   - name: dim_hosts_cleansed
+    description: Cleansed raw hosts, handled null host name.
     columns:
       - name: host_id
+        description: Primary key of the table.
         tests:
           - not_null
           - unique
 
       - name: host_name
+        description: Name of the host. Anonymous wherever information not available.
         tests:
           - not_null
 
       - name: is_superhost
+        description: Boolean value; tells whether the host is a superhost or not.
         tests:
           - accepted_values:
               values: ['t', 'f']
